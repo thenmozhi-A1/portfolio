@@ -4,7 +4,9 @@ import { motion } from 'framer-motion';
 import { ArrowRight, FileText } from 'lucide-react';
 import { useState } from 'react';
 import { ResumeModal } from '@/components/ui/resume-modal';
-import { FloatingShapes } from '@/components/ui/floating-shapes';
+import dynamic from 'next/dynamic';
+
+const FloatingShapes = dynamic(() => import('@/components/ui/floating-shapes').then(mod => mod.FloatingShapes), { ssr: false });
 
 export function Hero() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
