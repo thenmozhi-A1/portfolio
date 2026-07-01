@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { GlassCard } from '@/components/ui/glass-card';
 import { ExternalLink, Code2 } from 'lucide-react';
 import { useState } from 'react';
-import { ExternalLink, Code2 } from 'lucide-react';
 
 const PROJECTS = [
   {

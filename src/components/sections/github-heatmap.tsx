@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 
-const GitHubCalendar = dynamic(() => import('react-github-calendar'), { ssr: false });
+const GitHubCalendar: any = dynamic(() => import('react-github-calendar') as any, { ssr: false });
 
 export function GithubHeatmap() {
   return (
