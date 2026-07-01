@@ -2,8 +2,12 @@
 
 import { motion } from 'framer-motion';
 import { ArrowRight, FileText } from 'lucide-react';
+import { useState } from 'react';
+import { ResumeModal } from '@/components/ui/resume-modal';
 
 export function Hero() {
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
+
   return (
     <section id="home" className="min-h-screen flex items-center pt-20">
       <div className="container mx-auto px-6">
@@ -49,14 +53,12 @@ export function Hero() {
             >
               View Projects <ArrowRight className="w-4 h-4" />
             </a>
-            <a 
-              href="/resume.pdf#toolbar=0" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full font-medium transition-transform hover:scale-105"
+            <button 
+              onClick={() => setIsResumeOpen(true)}
+              className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full font-medium transition-transform hover:scale-105 cursor-pointer"
             >
               View Resume <FileText className="w-4 h-4" />
-            </a>
+            </button>
             <a 
               href="#contact" 
               className="inline-flex items-center gap-2 bg-foreground/5 border border-glass-border px-6 py-3 rounded-full font-medium transition-all hover:bg-foreground/10"
@@ -66,6 +68,11 @@ export function Hero() {
           </motion.div>
         </div>
       </div>
+
+      <ResumeModal 
+        isOpen={isResumeOpen} 
+        onClose={() => setIsResumeOpen(false)} 
+      />
     </section>
   );
 }

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { GlassCard } from '@/components/ui/glass-card';
 import Image from 'next/image';
+import { GithubHeatmap } from './github-heatmap';
 
 export function About() {
   return (
@@ -68,6 +69,8 @@ export function About() {
             </GlassCard>
           </motion.div>
         </div>
+
+        <GithubHeatmap />
       </div>
     </section>
   );
