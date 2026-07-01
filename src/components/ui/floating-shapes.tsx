@@ -56,7 +56,7 @@ function Shape2() {
   );
 }
 
-export function FloatingShapes() {
+export default function FloatingShapes() {
   return (
     <div className="absolute inset-0 pointer-events-none z-0 hidden lg:block">
       <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
