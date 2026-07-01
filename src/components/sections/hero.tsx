@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { ResumeModal } from '@/components/ui/resume-modal';
 import dynamic from 'next/dynamic';
 
-const FloatingShapes = dynamic(() => import('@/components/ui/floating-shapes').then((mod) => mod.default), { ssr: false });
+const FloatingShapes = dynamic(() => import('@/components/ui/floating-shapes'), { ssr: false });
 
 export function Hero() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
