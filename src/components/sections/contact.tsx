@@ -32,6 +32,13 @@ export function Contact() {
     <section id="contact" className="py-24 relative">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-center">Get In Touch</h2>
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-foreground/80 mt-6 mb-8 text-sm md:text-base">
+          <a href="tel:8489102133" className="hover:text-primary transition-colors">📞 8489102133</a>
+          <span className="hidden md:inline">•</span>
+          <a href="mailto:thenmozhiayothi@gmail.com" className="hover:text-primary transition-colors">✉️ thenmozhiayothi@gmail.com</a>
+          <span className="hidden md:inline">•</span>
+          <span>📍 Vadapalani, Chennai-600 026</span>
+        </div>
         <div className="max-w-2xl mx-auto mt-12">
           <GlassCard interactive={false}>
             <form onSubmit={handleSubmit} className="space-y-6">
