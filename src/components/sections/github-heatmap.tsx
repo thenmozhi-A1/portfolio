@@ -3,10 +3,19 @@
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 
-const GitHubCalendar = dynamic(
-  () => import('react-github-calendar').then((mod) => mod.default || mod),
+const GitHubCalendar: any = dynamic(
+  () => import('react-github-calendar').then((mod: any) => {
+    // Turbopack / ESM interop can be tricky. We must return a React Component function.
+    if (typeof mod === 'function') return mod;
+    if (mod.default) return mod.default;
+    if (mod.GitHubCalendar) return mod.GitHubCalendar;
+    
+    // Fallback: if it's somehow none of the above, try to find a function in the exports
+    const fn = Object.values(mod).find(v => typeof v === 'function');
+    return fn || mod;
+  }),
   { ssr: false }
-) as any;
+);
 
 export function GithubHeatmap() {
   return (
