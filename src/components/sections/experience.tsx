@@ -20,6 +20,19 @@ const EXPERIENCES = [
 ];
 
 export function Experience() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.3 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -30 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } }
+  };
+
   return (
     <section id="experience" className="py-24 relative">
       <div className="container mx-auto px-6">
@@ -34,14 +47,17 @@ export function Experience() {
           <div className="w-20 h-1 bg-primary rounded-full" />
         </motion.div>
 
-        <div className="space-y-8">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="space-y-8"
+        >
           {EXPERIENCES.map((exp, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              variants={itemVariants}
             >
               <GlassCard>
                 <div className="relative pl-6 md:pl-8">
@@ -69,7 +85,7 @@ export function Experience() {
               </GlassCard>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

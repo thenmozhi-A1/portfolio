@@ -22,6 +22,19 @@ const PROJECTS = [
 ];
 
 export function Projects() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
+
   return (
     <section id="projects" className="py-24 relative">
       <div className="container mx-auto px-6">
@@ -36,14 +49,17 @@ export function Projects() {
           <div className="w-20 h-1 bg-primary rounded-full" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {PROJECTS.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              variants={itemVariants}
             >
               <GlassCard href={project.demo !== '#' ? project.demo : project.github} className="h-full flex flex-col group">
                 <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
@@ -74,7 +90,7 @@ export function Projects() {
               </GlassCard>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
