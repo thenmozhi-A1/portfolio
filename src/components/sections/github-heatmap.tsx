@@ -1,7 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import GitHubCalendar from 'react-github-calendar';
+import dynamic from 'next/dynamic';
+
+const GitHubCalendar = dynamic(() => import('react-github-calendar'), { ssr: false });
 
 export function GithubHeatmap() {
   return (
