@@ -4,13 +4,15 @@ import { motion } from 'framer-motion';
 import { ArrowRight, FileText } from 'lucide-react';
 import { useState } from 'react';
 import { ResumeModal } from '@/components/ui/resume-modal';
+import { FloatingShapes } from '@/components/ui/floating-shapes';
 
 export function Hero() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   return (
-    <section id="home" className="min-h-screen flex items-center pt-20">
-      <div className="container mx-auto px-6">
+    <section id="home" className="min-h-screen flex items-center pt-20 relative overflow-hidden">
+      <FloatingShapes />
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
