@@ -1,7 +1,6 @@
 'use client';
 
 import { useUiStore } from '@/store/ui-store';
-import { Moon, Sun, Laptop } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useEffect, useState } from 'react';
 
@@ -15,7 +14,7 @@ const NAV_LINKS = [
 ];
 
 export function Header() {
-  const { theme, setTheme, activeSection } = useUiStore();
+  const { activeSection } = useUiStore();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -49,17 +48,6 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-1 bg-foreground/5 rounded-full p-1 border border-glass-border">
-          <button onClick={() => setTheme('light')} className={cn("p-2 rounded-full transition-colors text-foreground", theme === 'light' && "bg-background shadow-sm")} aria-label="Light mode">
-            <Sun className="w-4 h-4" />
-          </button>
-          <button onClick={() => setTheme('system')} className={cn("p-2 rounded-full transition-colors text-foreground", theme === 'system' && "bg-background shadow-sm")} aria-label="System mode">
-            <Laptop className="w-4 h-4" />
-          </button>
-          <button onClick={() => setTheme('dark')} className={cn("p-2 rounded-full transition-colors text-foreground", theme === 'dark' && "bg-background shadow-sm")} aria-label="Dark mode">
-            <Moon className="w-4 h-4" />
-          </button>
-        </div>
       </div>
     </header>
   );
