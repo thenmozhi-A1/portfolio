@@ -26,28 +26,17 @@ export function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <p className="text-foreground/80 text-lg leading-relaxed mb-6">
-              I am a motivated and detail-oriented Java Full Stack Developer with a strong foundation in Java, Spring Boot, HTML, CSS, JavaScript, React, and MySQL. I am a quick learner with strong problem-solving and teamwork abilities.
-            </p>
-            
-            <h3 className="text-xl font-bold mt-8 mb-4">Education</h3>
-            <div className="space-y-4">
-              <div>
-                <p className="font-medium text-foreground">MCA - Master of Computer Application (CGPA - 8.2)</p>
-                <p className="text-foreground/60 text-sm">Sri Balaji Chockalingam Engineering College - Arni | 2023 - 2025</p>
-              </div>
-              <div>
-                <p className="font-medium text-foreground">B.Sc - Computer Science (CGPA - 8.1)</p>
-                <p className="text-foreground/60 text-sm">Govt Arts College - Tiruvannamalai | 2020 - 2023</p>
-              </div>
+            <div className="space-y-6">
+              <p className="text-foreground/80 text-lg leading-relaxed">
+                Hello! I am a passionate and detail-oriented <span className="text-primary font-semibold">Java Full Stack Developer</span> dedicated to crafting robust, scalable, and user-centric web applications. My journey in technology has equipped me with a strong foundation across both frontend and backend development.
+              </p>
+              <p className="text-foreground/80 text-lg leading-relaxed">
+                On the backend, I specialize in building efficient RESTful APIs and microservices using <span className="text-primary font-semibold">Java, Spring Boot, and MySQL</span>. On the frontend, I bring interfaces to life using modern technologies like <span className="text-primary font-semibold">React, JavaScript, HTML, and CSS</span>.
+              </p>
+              <p className="text-foreground/80 text-lg leading-relaxed">
+                I thrive in collaborative environments and love tackling complex challenges head-on. As a quick learner with a Master's degree in Computer Applications, I am constantly exploring new tools and methodologies to elevate the quality of my code and deliver impactful solutions.
+              </p>
             </div>
-
-            <h3 className="text-xl font-bold mt-8 mb-4">Certifications</h3>
-            <ul className="list-disc list-inside text-foreground/80 space-y-2">
-              <li>Java Fullstack Course Certificate</li>
-              <li>Symposium - Bluetooth Mobile Chatting</li>
-              <li>Industrial Visit at Enila Technology</li>
-            </ul>
           </motion.div>
 
           <motion.div

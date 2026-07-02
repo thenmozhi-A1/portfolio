@@ -19,7 +19,7 @@ function Shape1() {
     <Float speed={2} rotationIntensity={1} floatIntensity={2}>
       <Icosahedron ref={meshRef} args={[1, 1]} position={[-1.5, 0.5, 0]}>
         <meshPhysicalMaterial
-          color="#3b82f6" // Primary blue
+          color="#3b82f6" // Primary blue   
           roughness={0.1}
           transmission={0.9} // Glass effect
           thickness={0.5}
